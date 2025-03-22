@@ -54,22 +54,27 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link href="/">
-                  <a className="text-gray-300 hover:text-white transition-colors">Inicio</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Inicio</div>
                 </Link>
               </li>
               <li>
                 <Link href="/productos">
-                  <a className="text-gray-300 hover:text-white transition-colors">Productos</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Productos</div>
                 </Link>
               </li>
               <li>
                 <Link href="/servicios">
-                  <a className="text-gray-300 hover:text-white transition-colors">Servicios</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Servicios</div>
                 </Link>
               </li>
               <li>
                 <Link href="/contacto">
-                  <a className="text-gray-300 hover:text-white transition-colors">Contacto</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Contacto</div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/catalogo">
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Catálogo</div>
                 </Link>
               </li>
             </ul>
@@ -80,22 +85,22 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link href="/productos#ventaneria">
-                  <a className="text-gray-300 hover:text-white transition-colors">Ventanería</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Ventanería</div>
                 </Link>
               </li>
               <li>
                 <Link href="/productos#cubiertas">
-                  <a className="text-gray-300 hover:text-white transition-colors">Cubiertas</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Cubiertas</div>
                 </Link>
               </li>
               <li>
                 <Link href="/productos#pasamaneria">
-                  <a className="text-gray-300 hover:text-white transition-colors">Pasamanería</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Pasamanería</div>
                 </Link>
               </li>
               <li>
                 <Link href="/productos#cortinas">
-                  <a className="text-gray-300 hover:text-white transition-colors">Cortinas de Baño</a>
+                  <div className="text-gray-300 hover:text-white transition-colors cursor-pointer">Cortinas de Baño</div>
                 </Link>
               </li>
             </ul>
