@@ -51,19 +51,24 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulating form submission
+      // En GitHub Pages, no podemos procesar formularios realmente
+      // Esto es solo una simulación para la demostración
       await new Promise(resolve => setTimeout(resolve, 1000));
       
+      // En un sitio real, los datos se enviarían a un servicio externo como 
+      // Formspree, Netlify Forms, o un webhook personalizado
+      console.log("Datos del formulario (solo demo):", data);
+      
       toast({
-        title: "Mensaje enviado",
-        description: "¡Gracias por contactarnos! Responderemos a la brevedad.",
+        title: "Demostración de formulario en GitHub Pages",
+        description: "Este es solo un ejemplo. En un sitio real, contacte por WhatsApp o redes sociales.",
       });
       
       form.reset();
     } catch (error) {
       toast({
         title: "Error",
-        description: "No se pudo enviar el mensaje. Intente nuevamente.",
+        description: "No se pudo enviar el mensaje. En un sitio real, use los enlaces de contacto alternativos.",
         variant: "destructive",
       });
     } finally {

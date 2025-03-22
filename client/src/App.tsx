@@ -10,6 +10,20 @@ import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
 import Catalogo from "@/pages/Catalogo";
 
+// Para GitHub Pages, usaremos un enfoque más simple con redirecciones
+// y el enrutamiento estándar de wouter
+
+// Agregamos un script para manejar rutas en GitHub Pages
+// durante la inicialización de la aplicación
+if (typeof window !== 'undefined') {
+  // Inicializar rutas en GitHub Pages
+  // Esto implementa una redirección manual basada en fragmentos (hash)
+  const path = window.location.hash.replace('#', '');
+  if (path.length > 0) {
+    window.history.replaceState(null, '', path);
+  }
+}
+
 function Router() {
   return (
     <Layout>

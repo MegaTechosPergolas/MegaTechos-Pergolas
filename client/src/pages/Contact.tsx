@@ -1,7 +1,8 @@
 import { Separator } from "@/components/ui/separator";
 import ContactForm from "@/components/ContactForm";
 import SocialLinks from "@/components/SocialLinks";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, AlertTriangle } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const Contact = () => {
   return (
@@ -9,9 +10,19 @@ const Contact = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-heading font-bold text-center mb-4">Contacto</h2>
-          <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
             Estamos a su disposición para resolver cualquier duda y proporcionarle la mejor solución para sus necesidades.
           </p>
+          
+          {/* Alerta para sitio estático GitHub Pages */}
+          <Alert className="mb-8 bg-amber-50 border-amber-300">
+            <AlertTriangle className="h-5 w-5 text-amber-500" />
+            <AlertTitle className="text-amber-800">Sitio Estático (GitHub Pages)</AlertTitle>
+            <AlertDescription className="text-amber-700">
+              Esta es una versión estática del sitio web alojada en GitHub Pages. El formulario de contacto es solo demostrativo.
+              Para contactarnos realmente, utilice el correo electrónico, teléfono o WhatsApp indicados en esta página.
+            </AlertDescription>
+          </Alert>
           
           <div className="grid md:grid-cols-2 gap-10">
             <div>
@@ -69,7 +80,7 @@ const Contact = () => {
             </div>
             
             <div>
-              <h3 className="text-2xl font-heading font-semibold mb-6">Formulario de Contacto</h3>
+              <h3 className="text-2xl font-heading font-semibold mb-6">Formulario de Contacto (Demo)</h3>
               <ContactForm />
               
               <div className="mt-8">
