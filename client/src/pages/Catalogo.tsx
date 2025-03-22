@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -175,11 +174,11 @@ const Catalogo = () => {
             Ofrecemos soluciones personalizadas para sus necesidades específicas. 
             Contacte con nosotros para un presupuesto detallado.
           </p>
-          <Link href="/contacto">
-          <Button className="bg-primary text-white hover:bg-primary/90">
-            Solicitar presupuesto
-          </Button>
-        </Link>
+          <div onClick={() => window.location.href = '/contacto'}>
+            <Button className="bg-primary text-white hover:bg-primary/90">
+              Solicitar presupuesto
+            </Button>
+          </div>
         </div>
       </div>
     </Layout>
