@@ -1,10 +1,34 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Hook personalizado para trabajar con rutas basadas en hash
+const useHashBasedLocation = () => {
+  const getCurrentLocation = () => {
+    return window.location.hash.replace("#", "") || "/";
+  };
+  
+  const [currentPath, setCurrentPath] = useState(getCurrentLocation());
+  
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentPath(getCurrentLocation());
+    };
+    
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange(); // Inicializar
+    
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+  
+  return currentPath;
+};
+
 const Navbar = () => {
-  const [location] = useLocation();
+  const location = useHashBasedLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 

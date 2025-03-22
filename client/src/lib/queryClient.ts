@@ -1,50 +1,49 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
-async function throwIfResNotOk(res: Response) {
-  if (!res.ok) {
-    const text = (await res.text()) || res.statusText;
-    throw new Error(`${res.status}: ${text}`);
-  }
-}
+// Versión estática para GitHub Pages
+// Esta implementación simula API calls para un sitio estático
+
+/**
+ * Cliente de consulta modificado para sitios estáticos (GitHub Pages)
+ * Esta versión no intenta realizar peticiones a un backend
+ */
 
 export async function apiRequest(
   method: string,
   url: string,
   data?: unknown | undefined,
-): Promise<Response> {
-  const res = await fetch(url, {
-    method,
-    headers: data ? { "Content-Type": "application/json" } : {},
-    body: data ? JSON.stringify(data) : undefined,
-    credentials: "include",
-  });
-
-  await throwIfResNotOk(res);
-  return res;
+): Promise<any> {
+  console.log(`[Sitio Estático] Simulando petición ${method} a ${url}`, data);
+  
+  // Para sitios estáticos, solo devolvemos una respuesta simulada
+  return {
+    ok: true,
+    json: () => Promise.resolve({ success: true, message: "Operación simulada en sitio estático" }),
+    text: () => Promise.resolve("Operación simulada en sitio estático"),
+    status: 200,
+    statusText: "OK (Simulado)",
+  };
 }
 
-type UnauthorizedBehavior = "returnNull" | "throw";
-export const getQueryFn: <T>(options: {
-  on401: UnauthorizedBehavior;
-}) => QueryFunction<T> =
-  ({ on401: unauthorizedBehavior }) =>
+// Mock queryFn para sitios estáticos
+export const getStaticQueryFn: <T>(options: any) => QueryFunction<T> =
+  () =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey[0] as string, {
-      credentials: "include",
-    });
-
-    if (unauthorizedBehavior === "returnNull" && res.status === 401) {
-      return null;
-    }
-
-    await throwIfResNotOk(res);
-    return await res.json();
+    console.log(`[Sitio Estático] Simulando consulta para ${queryKey[0]}`);
+    
+    // Para sitios estáticos, devolvemos datos simulados
+    return { 
+      success: true, 
+      message: "Datos simulados para sitio estático",
+      data: [] 
+    } as any;
   };
 
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      queryFn: getQueryFn({ on401: "throw" }),
+      // Usamos el queryFn estático que no realiza peticiones reales
+      queryFn: getStaticQueryFn({}),
       refetchInterval: false,
       refetchOnWindowFocus: false,
       staleTime: Infinity,
