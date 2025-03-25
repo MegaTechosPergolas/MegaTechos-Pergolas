@@ -12,8 +12,8 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
-// Nombre del repositorio en GitHub - CAMBIA ESTO para que coincida con tu repo
-const REPO_NAME = 'megatechos-pergolas';
+// Nombre del repositorio en GitHub - Actualizado al nombre correcto
+const REPO_NAME = 'MegaTechos-Pergolas';
 
 // Ejecutar el build de Vite
 console.log('Ejecutando build...');
