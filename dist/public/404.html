@@ -1,25 +1,21 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Redireccionando...</title>
-  <script>
-    // Construir la ruta basada en GitHub Pages
-    var segmentCount = 1; // Asume que es /{repo-name}
-    var location = window.location;
-    var repo = '/megatechos-pergolas';
-    var l = location.pathname.split('/').slice(0, 1 + segmentCount).join('/') || '/';
-    l = l.replace(//$/, '');
-    var path = location.pathname.slice(l.length);
-    
-    // Redirigir a la página principal con el hash
-    var redirectUrl = l + '/#' + path + location.search + location.hash;
-    window.location.replace(redirectUrl);
-  </script>
-</head>
-<body>
-  <h1>Redireccionando...</h1>
-  <p>Si no eres redirigido automáticamente, haz clic <a href="/">aquí</a>.</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redireccionando...</title>
+    <script>
+      // Asumimos que el repositorio está en /MegaTechos-Pergolas
+      var repo = "/MegaTechos-Pergolas";  // Aquí agregamos el subdirectorio
+      var location = window.location;
+      
+      // Extraemos la ruta después de la barra para la redirección
+      var path = location.pathname.replace(repo, '');  // Eliminamos el prefijo del repositorio
+      var redirectUrl = repo + path + location.search + location.hash;  // Redirigimos a la URL correcta
+      window.location.replace(redirectUrl);  // Redireccionamos al usuario
+    </script>
+  </head>
+  <body>
+    <h1>Redireccionando...</h1>
+    <p>Si no eres redirigido automáticamente, haz clic <a href="/">aquí</a>.</p>
+  </body>
 </html>
