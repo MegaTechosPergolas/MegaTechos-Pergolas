@@ -6,7 +6,7 @@
   <script>
     (function () {
       var location = window.location;
-      var repo = "MegaTechos-Pergolas"; // Nombre del repositorio sin "/"
+      var repo = "MegaTechos-Pergolas";
       var path = location.pathname.replace(new RegExp("^/" + repo), ""); // Quita el repo de la ruta
       var newUrl = "/" + repo + "/#" + path + location.search + location.hash;
       
