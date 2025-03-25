@@ -46,7 +46,6 @@
 --radius: 0.5rem;
   }</style>
 
-    <base href="/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MegaTechos & Pérgolas - Aluminio, Vidrio y Cerrajería</title>
@@ -55,43 +54,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <script type="module" crossorigin src="assets/index-B0ZiIN08.js"></script>
-    <link rel="stylesheet" crossorigin href="assets/index-CAuL6mM6.css">
-
-  
-  <script>
-    // Script para manejar redirecciones SPA en GitHub Pages
-    (function() {
-      // No ejecutar en desarrollo local
-      if (window.location.hostname === 'localhost' || 
-          window.location.hostname === '127.0.0.1') {
-        return;
-      }
-      
-      // Redireccionar hash a rutas reales
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect !== location.href) {
-        history.replaceState(null, null, redirect.split('#')[0]);
-      }
-
-      // Manejo de URL para GitHub Pages
-      var repo = '/megatechos-pergolas';
-      var l = window.location;
-      if (l.hash) {
-        var mainPath = l.pathname.split('/').slice(0, 2).join('/');
-        var hashPath = l.hash.substr(1);
-        
-        if (hashPath && !hashPath.startsWith('/')) {
-          hashPath = '/' + hashPath;
-        }
-        
-        // Actualizar la URL para quitar el hash
-        window.history.replaceState(null, null, mainPath + hashPath + l.search);
-      }
-    })();
-  </script>
-</head>
+    <script type="module" crossorigin src="/MegaTechos-Pergolas/assets/index-B0ZiIN08.js"></script>
+    <link rel="stylesheet" crossorigin href="/MegaTechos-Pergolas/assets/index-CAuL6mM6.css">
+  </head>
   <body>
     <div id="root"></div>
 
