@@ -31,3 +31,4 @@ jobs:
         with:
           folder: dist/public
           branch: gh-pages
+          clean: true
