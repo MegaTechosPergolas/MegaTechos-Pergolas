@@ -8,9 +8,9 @@
  * 3. Crea un script de redirección para SPA
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 // Nombre del repositorio en GitHub - CAMBIA ESTO para que coincida con tu repo
 const REPO_NAME = 'megatechos-pergolas';
@@ -20,7 +20,15 @@ console.log('Ejecutando build...');
 execSync('npm run build', { stdio: 'inherit' });
 
 // Ruta al directorio de build
+//const distDir = path.resolve(__dirname, 'dist/public');
+import { fileURLToPath } from 'url';
+
+// Definir __dirname en ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const distDir = path.resolve(__dirname, 'dist/public');
+
 
 // Verificar que el directorio existe
 if (!fs.existsSync(distDir)) {
