@@ -5,13 +5,13 @@
     <title>Redireccionando...</title>
     <script>
       // Asumimos que el repositorio está en /MegaTechos-Pergolas
-      var repo = "/MegaTechos-Pergolas";  // Aquí agregamos el subdirectorio
+      var repo = "/MegaTechos-Pergolas"; // Aquí agregamos el subdirectorio
       var location = window.location;
-      
+
       // Extraemos la ruta después de la barra para la redirección
-      var path = location.pathname.replace(repo, '');  // Eliminamos el prefijo del repositorio
-      var redirectUrl = repo + path + location.search + location.hash;  // Redirigimos a la URL correcta
-      window.location.replace(redirectUrl);  // Redireccionamos al usuario
+      var path = location.pathname.replace(repo, ""); // Eliminamos el prefijo del repositorio
+      var redirectUrl = repo + path + location.search + location.hash; // Redirigimos a la URL correcta
+      window.location.replace(redirectUrl); // Redireccionamos al usuario
     </script>
   </head>
   <body>
