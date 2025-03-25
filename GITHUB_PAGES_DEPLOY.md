@@ -4,11 +4,11 @@ Este documento proporciona instrucciones detalladas para desplegar esta aplicaci
 
 ## Preparación del Repositorio
 
-1. Crea un nuevo repositorio en GitHub con el nombre que desees (por ejemplo, `megatechos-pergolas`).
+1. Usa el repositorio existente "MegaTechos-Pergolas" en GitHub.
 2. Clona este repositorio a tu máquina local:
    ```bash
-   git clone https://github.com/tu-usuario/megatechos-pergolas.git
-   cd megatechos-pergolas
+   git clone https://github.com/tu-usuario/MegaTechos-Pergolas.git
+   cd MegaTechos-Pergolas
    ```
 
 ## Construcción del Sitio Estático
@@ -42,7 +42,7 @@ Este documento proporciona instrucciones detalladas para desplegar esta aplicaci
        // Construir la ruta basada en GitHub Pages
        var segmentCount = 1; // Asume que es /{repo-name}
        var location = window.location;
-       var repo = '/megatechos-pergolas'; // Cambia esto al nombre de tu repositorio
+       var repo = '/MegaTechos-Pergolas'; // Nombre correcto del repositorio
        var l = location.pathname.split('/').slice(0, 1 + segmentCount).join('/') || '/';
        l = l.replace(/\/$/, '');
        var path = location.pathname.slice(l.length);
@@ -123,7 +123,7 @@ Este documento proporciona instrucciones detalladas para desplegar esta aplicaci
    git add .
    git commit -m "Deploy"
    git branch -M main
-   git remote add origin https://github.com/tu-usuario/megatechos-pergolas.git
+   git remote add origin https://github.com/tu-usuario/MegaTechos-Pergolas.git
    git push -f origin main:gh-pages
    ```
 
@@ -137,7 +137,7 @@ Este documento proporciona instrucciones detalladas para desplegar esta aplicaci
 
 1. Ve a la configuración de tu repositorio en GitHub (`Settings` > `Pages`).
 2. En "Source", selecciona la rama `gh-pages` y guarda.
-3. Tu sitio estará disponible en: `https://tu-usuario.github.io/megatechos-pergolas/`
+3. Tu sitio estará disponible en: `https://tu-usuario.github.io/MegaTechos-Pergolas/`
 
 ## Ajustes Adicionales para SPA (Single Page Application)
 
@@ -150,7 +150,7 @@ Si experimentas problemas con las rutas, asegúrate de:
 
 ### Enlaces Directos y Refrescos
 
-Si los usuarios intentan acceder directamente a una URL como `https://tu-usuario.github.io/megatechos-pergolas/catalogo`, podrían recibir un error 404. Para solucionarlo:
+Si los usuarios intentan acceder directamente a una URL como `https://tu-usuario.github.io/MegaTechos-Pergolas/catalogo`, podrían recibir un error 404. Para solucionarlo:
 
 1. Asegúrate de tener implementado el archivo `404.html` correctamente.
 2. Comunica a los usuarios que deben usar los enlaces internos de navegación.
