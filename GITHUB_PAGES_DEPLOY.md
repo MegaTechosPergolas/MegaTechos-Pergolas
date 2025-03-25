@@ -7,7 +7,7 @@ Este documento proporciona instrucciones detalladas para desplegar esta aplicaci
 1. Usa el repositorio existente "MegaTechos-Pergolas" en GitHub.
 2. Clona este repositorio a tu máquina local:
    ```bash
-   git clone https://github.com/tu-usuario/MegaTechos-Pergolas.git
+   git clone https://github.com/MegaTechosPergolas/MegaTechos-Pergolas.git
    cd MegaTechos-Pergolas
    ```
 
@@ -123,7 +123,7 @@ Este documento proporciona instrucciones detalladas para desplegar esta aplicaci
    git add .
    git commit -m "Deploy"
    git branch -M main
-   git remote add origin https://github.com/tu-usuario/MegaTechos-Pergolas.git
+   git remote add origin https://github.com/MegaTechosPergolas/MegaTechos-Pergolas.git
    git push -f origin main:gh-pages
    ```
 
@@ -137,7 +137,7 @@ Este documento proporciona instrucciones detalladas para desplegar esta aplicaci
 
 1. Ve a la configuración de tu repositorio en GitHub (`Settings` > `Pages`).
 2. En "Source", selecciona la rama `gh-pages` y guarda.
-3. Tu sitio estará disponible en: `https://tu-usuario.github.io/MegaTechos-Pergolas/`
+3. Tu sitio estará disponible en: `https://MegaTechosPergolas.github.io/MegaTechos-Pergolas/`
 
 ## Ajustes Adicionales para SPA (Single Page Application)
 
@@ -150,7 +150,7 @@ Si experimentas problemas con las rutas, asegúrate de:
 
 ### Enlaces Directos y Refrescos
 
-Si los usuarios intentan acceder directamente a una URL como `https://tu-usuario.github.io/MegaTechos-Pergolas/catalogo`, podrían recibir un error 404. Para solucionarlo:
+Si los usuarios intentan acceder directamente a una URL como `https://MegaTechosPergolas.github.io/MegaTechos-Pergolas/catalogo`, podrían recibir un error 404. Para solucionarlo:
 
 1. Asegúrate de tener implementado el archivo `404.html` correctamente.
 2. Comunica a los usuarios que deben usar los enlaces internos de navegación.

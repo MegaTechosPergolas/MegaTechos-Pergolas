@@ -115,8 +115,8 @@ fs.writeFileSync(indexPath, indexContent);
 console.log('¡Preparación para GitHub Pages completada!');
 console.log(`
 Para desplegar en GitHub Pages:
-1. Crea un repositorio en GitHub llamado "${REPO_NAME}"
+1. Usa el repositorio existente en GitHub con el nombre "${REPO_NAME}" y el usuario "MegaTechosPergolas"
 2. Sube el contenido de la carpeta "dist/public" a la rama principal de tu repositorio
 3. Activa GitHub Pages desde la configuración del repositorio para la rama "main"
-4. Tu sitio estará disponible en: https://tu-usuario.github.io/${REPO_NAME}/
+4. Tu sitio estará disponible en: https://MegaTechosPergolas.github.io/${REPO_NAME}/
 `);
