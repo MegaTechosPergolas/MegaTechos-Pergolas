@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Layout from "@/components/Layout";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -114,74 +114,74 @@ const Catalogo = () => {
   const cortinas = prepareItems(cortinasProducts);
 
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-heading font-bold mb-4">Catálogo de Productos</h1>
-          <p className="text-text-secondary max-w-3xl mx-auto">
-            Explore nuestro catálogo completo de productos con especificaciones técnicas, 
-            opciones de personalización y precios. Solicite presupuestos personalizados para 
-            cualquier producto.
-          </p>
+    <div className="container mx-auto px-4 py-12">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-heading font-bold mb-4">Catálogo de Productos</h1>
+        <p className="text-text-secondary max-w-3xl mx-auto">
+          Explore nuestro catálogo completo de productos con especificaciones técnicas, 
+          opciones de personalización y precios. Solicite presupuestos personalizados para 
+          cualquier producto.
+        </p>
+      </div>
+
+      <Tabs defaultValue="ventaneria" className="w-full">
+        <div className="flex justify-center mb-8">
+          <TabsList>
+            <TabsTrigger value="ventaneria">Ventanería</TabsTrigger>
+            <TabsTrigger value="cubiertas">Cubiertas</TabsTrigger>
+            <TabsTrigger value="pasamaneria">Pasamanería</TabsTrigger>
+            <TabsTrigger value="cortinas">Cortinas de Baño</TabsTrigger>
+          </TabsList>
         </div>
 
-        <Tabs defaultValue="ventaneria" className="w-full">
-          <div className="flex justify-center mb-8">
-            <TabsList>
-              <TabsTrigger value="ventaneria">Ventanería</TabsTrigger>
-              <TabsTrigger value="cubiertas">Cubiertas</TabsTrigger>
-              <TabsTrigger value="pasamaneria">Pasamanería</TabsTrigger>
-              <TabsTrigger value="cortinas">Cortinas de Baño</TabsTrigger>
-            </TabsList>
+        <TabsContent value="ventaneria">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ventaneria.map((item, index) => (
+              <CatalogItemCard key={index} item={item} />
+            ))}
           </div>
+        </TabsContent>
 
-          <TabsContent value="ventaneria">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ventaneria.map((item, index) => (
-                <CatalogItemCard key={index} item={item} />
-              ))}
-            </div>
-          </TabsContent>
+        <TabsContent value="cubiertas">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cubiertas.map((item, index) => (
+              <CatalogItemCard key={index} item={item} />
+            ))}
+          </div>
+        </TabsContent>
 
-          <TabsContent value="cubiertas">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cubiertas.map((item, index) => (
-                <CatalogItemCard key={index} item={item} />
-              ))}
-            </div>
-          </TabsContent>
+        <TabsContent value="pasamaneria">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pasamaneria.map((item, index) => (
+              <CatalogItemCard key={index} item={item} />
+            ))}
+          </div>
+        </TabsContent>
 
-          <TabsContent value="pasamaneria">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pasamaneria.map((item, index) => (
-                <CatalogItemCard key={index} item={item} />
-              ))}
-            </div>
-          </TabsContent>
+        <TabsContent value="cortinas">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cortinas.map((item, index) => (
+              <CatalogItemCard key={index} item={item} />
+            ))}
+          </div>
+        </TabsContent>
+      </Tabs>
 
-          <TabsContent value="cortinas">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cortinas.map((item, index) => (
-                <CatalogItemCard key={index} item={item} />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        <div className="mt-16 text-center">
-          <h2 className="text-2xl font-heading font-semibold mb-4">¿No encuentra lo que busca?</h2>
-          <p className="text-text-secondary max-w-2xl mx-auto mb-6">
-            Ofrecemos soluciones personalizadas para sus necesidades específicas. 
-            Contacte con nosotros para un presupuesto detallado.
-          </p>
-          <div onClick={() => window.location.href = '/contacto'}>
+      <div className="mt-16 text-center">
+        <h2 className="text-2xl font-heading font-semibold mb-4">¿No encuentra lo que busca?</h2>
+        <p className="text-text-secondary max-w-2xl mx-auto mb-6">
+          Ofrecemos soluciones personalizadas para sus necesidades específicas. 
+          Contacte con nosotros para un presupuesto detallado.
+        </p>
+        <Link href="/contacto">
+          <a className="inline-block">
             <Button className="bg-primary text-white hover:bg-primary/90">
               Solicitar presupuesto
             </Button>
-          </div>
-        </div>
+          </a>
+        </Link>
       </div>
-    </Layout>
+    </div>
   );
 };
 
